@@ -1,0 +1,448 @@
+********** Results for Stencil_float_2_1_1_1_0**********
+problem-size: 2048
+local-size: 256
+num-iters: 15
+core-freq: 0
+memory-freq: 0
+device-name: Intel(R) Arc(TM) A770 Graphics
+sycl-implementation: UNKNOWN
+throughput-metric: N/A
+kernel-time-mean: 0.007837 [s]
+kernel-time-stddev: 0.000004 [s]
+kernel-time-median: 0.007836 [s]
+kernel-time-min: 0.007834 [s]
+kernel-time-samples: "0.007834 0.007835 0.007836 0.007838 0.007843"
+kernel-time-throughput: N/A
+run-time-mean: 0.007976 [s]
+run-time-stddev: 0.000023 [s]
+run-time-median: 0.007968 [s]
+run-time-min: 0.007957 [s]
+run-time-samples: "0.007957 0.007968 0.007968 0.007972 0.008015"
+run-time-throughput: N/A
+kernel-energy-mean: 1.355908 [J]
+kernel-energy-stddev: 0.074521 [J]
+kernel-energy-median: 1.374573 [J]
+kernel-energy-min: 1.231323 [J]
+kernel-energy-max: 1.424744 [J]
+kernel-energy-samples: "1.231323 1.353027 1.374573 1.395874 1.424744"
+Verification: PASS
+********** Results for Stencil_float_3_1_1_1_0**********
+problem-size: 2048
+local-size: 256
+num-iters: 15
+core-freq: 0
+memory-freq: 0
+device-name: Intel(R) Arc(TM) A770 Graphics
+sycl-implementation: UNKNOWN
+throughput-metric: N/A
+kernel-time-mean: 0.014262 [s]
+kernel-time-stddev: 0.000018 [s]
+kernel-time-median: 0.014256 [s]
+kernel-time-min: 0.014248 [s]
+kernel-time-samples: "0.014248 0.014250 0.014256 0.014264 0.014293"
+kernel-time-throughput: N/A
+run-time-mean: 0.014417 [s]
+run-time-stddev: 0.000024 [s]
+run-time-median: 0.014404 [s]
+run-time-min: 0.014395 [s]
+run-time-samples: "0.014395 0.014402 0.014404 0.014443 0.014444"
+run-time-throughput: N/A
+kernel-energy-mean: 2.911389 [J]
+kernel-energy-stddev: 0.064493 [J]
+kernel-energy-median: 2.884705 [J]
+kernel-energy-min: 2.841552 [J]
+kernel-energy-max: 2.984924 [J]
+kernel-energy-samples: "2.841552 2.871033 2.884705 2.974732 2.984924"
+Verification: PASS
+********** Results for Stencil_float_4_1_1_1_0**********
+problem-size: 2048
+local-size: 256
+num-iters: 15
+core-freq: 0
+memory-freq: 0
+device-name: Intel(R) Arc(TM) A770 Graphics
+sycl-implementation: UNKNOWN
+throughput-metric: N/A
+kernel-time-mean: 0.023997 [s]
+kernel-time-stddev: 0.000012 [s]
+kernel-time-median: 0.023998 [s]
+kernel-time-min: 0.023985 [s]
+kernel-time-samples: "0.023985 0.023986 0.023998 0.024007 0.024011"
+kernel-time-throughput: N/A
+run-time-mean: 0.024180 [s]
+run-time-stddev: 0.000036 [s]
+run-time-median: 0.024170 [s]
+run-time-min: 0.024150 [s]
+run-time-samples: "0.024150 0.024156 0.024170 0.024181 0.024241"
+run-time-throughput: N/A
+kernel-energy-mean: 4.848816 [J]
+kernel-energy-stddev: 0.059015 [J]
+kernel-energy-median: 4.815307 [J]
+kernel-energy-min: 4.809388 [J]
+kernel-energy-max: 4.948670 [J]
+kernel-energy-samples: "4.809388 4.813903 4.815307 4.856811 4.948670"
+Verification: PASS
+********** Results for Stencil_float_5_0_1_1_0**********
+problem-size: 2048
+local-size: 256
+num-iters: 15
+core-freq: 0
+memory-freq: 0
+device-name: Intel(R) Arc(TM) A770 Graphics
+sycl-implementation: UNKNOWN
+throughput-metric: N/A
+kernel-time-mean: 0.021482 [s]
+kernel-time-stddev: 0.000022 [s]
+kernel-time-median: 0.021478 [s]
+kernel-time-min: 0.021456 [s]
+kernel-time-samples: "0.021456 0.021470 0.021478 0.021492 0.021514"
+kernel-time-throughput: N/A
+run-time-mean: 0.021648 [s]
+run-time-stddev: 0.000037 [s]
+run-time-median: 0.021640 [s]
+run-time-min: 0.021601 [s]
+run-time-samples: "0.021601 0.021632 0.021640 0.021674 0.021695"
+run-time-throughput: N/A
+kernel-energy-mean: 4.559497 [J]
+kernel-energy-stddev: 0.090055 [J]
+kernel-energy-median: 4.527527 [J]
+kernel-energy-min: 4.459167 [J]
+kernel-energy-max: 4.662353 [J]
+kernel-energy-samples: "4.459167 4.502320 4.527527 4.646118 4.662353"
+Verification: PASS
+********** Results for Stencil_int_2_1_1_1_0**********
+problem-size: 2048
+local-size: 256
+num-iters: 15
+core-freq: 0
+memory-freq: 0
+device-name: Intel(R) Arc(TM) A770 Graphics
+sycl-implementation: UNKNOWN
+throughput-metric: N/A
+kernel-time-mean: 0.012815 [s]
+kernel-time-stddev: 0.000015 [s]
+kernel-time-median: 0.012809 [s]
+kernel-time-min: 0.012801 [s]
+kernel-time-samples: "0.012801 0.012802 0.012809 0.012827 0.012834"
+kernel-time-throughput: N/A
+run-time-mean: 0.012964 [s]
+run-time-stddev: 0.000039 [s]
+run-time-median: 0.012947 [s]
+run-time-min: 0.012933 [s]
+run-time-samples: "0.012933 0.012936 0.012947 0.012979 0.013025"
+run-time-throughput: N/A
+kernel-energy-mean: 2.684363 [J]
+kernel-energy-stddev: 0.038767 [J]
+kernel-energy-median: 2.709960 [J]
+kernel-energy-min: 2.636780 [J]
+kernel-energy-max: 2.715332 [J]
+kernel-energy-samples: "2.636780 2.647522 2.709960 2.712219 2.715332"
+Verification: PASS
+********** Results for Stencil_int_3_1_1_1_0**********
+problem-size: 2048
+local-size: 256
+num-iters: 15
+core-freq: 0
+memory-freq: 0
+device-name: Intel(R) Arc(TM) A770 Graphics
+sycl-implementation: UNKNOWN
+throughput-metric: N/A
+kernel-time-mean: 0.017552 [s]
+kernel-time-stddev: 0.000011 [s]
+kernel-time-median: 0.017558 [s]
+kernel-time-min: 0.017539 [s]
+kernel-time-samples: "0.017539 0.017543 0.017558 0.017559 0.017563"
+kernel-time-throughput: N/A
+run-time-mean: 0.017718 [s]
+run-time-stddev: 0.000036 [s]
+run-time-median: 0.017708 [s]
+run-time-min: 0.017686 [s]
+run-time-samples: "0.017686 0.017701 0.017708 0.017717 0.017780"
+run-time-throughput: N/A
+kernel-energy-mean: 3.890783 [J]
+kernel-energy-stddev: 0.065593 [J]
+kernel-energy-median: 3.928894 [J]
+kernel-energy-min: 3.816894 [J]
+kernel-energy-max: 3.947143 [J]
+kernel-energy-samples: "3.816894 3.821716 3.928894 3.939270 3.947143"
+Verification: PASS
+********** Results for Stencil_int_4_1_1_1_0**********
+problem-size: 2048
+local-size: 256
+num-iters: 15
+core-freq: 0
+memory-freq: 0
+device-name: Intel(R) Arc(TM) A770 Graphics
+sycl-implementation: UNKNOWN
+throughput-metric: N/A
+kernel-time-mean: 0.029071 [s]
+kernel-time-stddev: 0.000013 [s]
+kernel-time-median: 0.029078 [s]
+kernel-time-min: 0.029053 [s]
+kernel-time-samples: "0.029053 0.029062 0.029078 0.029080 0.029081"
+kernel-time-throughput: N/A
+run-time-mean: 0.029258 [s]
+run-time-stddev: 0.000016 [s]
+run-time-median: 0.029257 [s]
+run-time-min: 0.029238 [s]
+run-time-samples: "0.029238 0.029248 0.029257 0.029265 0.029280"
+run-time-throughput: N/A
+kernel-energy-mean: 6.299035 [J]
+kernel-energy-stddev: 0.041455 [J]
+kernel-energy-median: 6.289917 [J]
+kernel-energy-min: 6.243225 [J]
+kernel-energy-max: 6.343017 [J]
+kernel-energy-samples: "6.243225 6.281921 6.289917 6.337097 6.343017"
+Verification: PASS
+********** Results for Stencil_int_5_0_1_1_0**********
+problem-size: 2048
+local-size: 256
+num-iters: 15
+core-freq: 0
+memory-freq: 0
+device-name: Intel(R) Arc(TM) A770 Graphics
+sycl-implementation: UNKNOWN
+throughput-metric: N/A
+kernel-time-mean: 0.038489 [s]
+kernel-time-stddev: 0.000008 [s]
+kernel-time-median: 0.038486 [s]
+kernel-time-min: 0.038483 [s]
+kernel-time-samples: "0.038483 0.038484 0.038486 0.038488 0.038502"
+kernel-time-throughput: N/A
+run-time-mean: 0.038696 [s]
+run-time-stddev: 0.000023 [s]
+run-time-median: 0.038682 [s]
+run-time-min: 0.038679 [s]
+run-time-samples: "0.038679 0.038681 0.038682 0.038704 0.038733"
+run-time-throughput: N/A
+kernel-energy-mean: 7.984094 [J]
+kernel-energy-stddev: 0.015989 [J]
+kernel-energy-median: 7.980225 [J]
+kernel-energy-min: 7.970764 [J]
+kernel-energy-max: 8.010253 [J]
+kernel-energy-samples: "7.970764 7.972351 7.980225 7.986878 8.010253"
+Verification: PASS
+********** Results for Stencil_float_2_1_1_1_1**********
+problem-size: 2048
+local-size: 256
+num-iters: 15
+core-freq: 0
+memory-freq: 0
+device-name: Intel(R) Arc(TM) A770 Graphics
+sycl-implementation: UNKNOWN
+throughput-metric: N/A
+kernel-time-mean: 0.007934 [s]
+kernel-time-stddev: 0.000006 [s]
+kernel-time-median: 0.007935 [s]
+kernel-time-min: 0.007926 [s]
+kernel-time-samples: "0.007926 0.007931 0.007935 0.007939 0.007941"
+kernel-time-throughput: N/A
+run-time-mean: 0.008076 [s]
+run-time-stddev: 0.000023 [s]
+run-time-median: 0.008066 [s]
+run-time-min: 0.008059 [s]
+run-time-samples: "0.008059 0.008062 0.008066 0.008078 0.008115"
+run-time-throughput: N/A
+kernel-energy-mean: 1.890698 [J]
+kernel-energy-stddev: 0.074942 [J]
+kernel-energy-median: 1.922669 [J]
+kernel-energy-min: 1.764465 [J]
+kernel-energy-max: 1.955688 [J]
+kernel-energy-samples: "1.764465 1.884643 1.922669 1.926025 1.955688"
+Verification: PASS
+********** Results for Stencil_float_3_1_1_1_1**********
+problem-size: 2048
+local-size: 256
+num-iters: 15
+core-freq: 0
+memory-freq: 0
+device-name: Intel(R) Arc(TM) A770 Graphics
+sycl-implementation: UNKNOWN
+throughput-metric: N/A
+kernel-time-mean: 0.015554 [s]
+kernel-time-stddev: 0.000018 [s]
+kernel-time-median: 0.015551 [s]
+kernel-time-min: 0.015538 [s]
+kernel-time-samples: "0.015538 0.015544 0.015551 0.015553 0.015585"
+kernel-time-throughput: N/A
+run-time-mean: 0.015714 [s]
+run-time-stddev: 0.000025 [s]
+run-time-median: 0.015699 [s]
+run-time-min: 0.015692 [s]
+run-time-samples: "0.015692 0.015699 0.015699 0.015725 0.015753"
+run-time-throughput: N/A
+kernel-energy-mean: 3.638990 [J]
+kernel-energy-stddev: 0.072313 [J]
+kernel-energy-median: 3.621155 [J]
+kernel-energy-min: 3.566468 [J]
+kernel-energy-max: 3.725708 [J]
+kernel-energy-samples: "3.566468 3.578308 3.621155 3.703309 3.725708"
+Verification: PASS
+********** Results for Stencil_float_4_1_1_1_1**********
+problem-size: 2048
+local-size: 256
+num-iters: 15
+core-freq: 0
+memory-freq: 0
+device-name: Intel(R) Arc(TM) A770 Graphics
+sycl-implementation: UNKNOWN
+throughput-metric: N/A
+kernel-time-mean: 0.025916 [s]
+kernel-time-stddev: 0.000027 [s]
+kernel-time-median: 0.025924 [s]
+kernel-time-min: 0.025887 [s]
+kernel-time-samples: "0.025887 0.025889 0.025924 0.025940 0.025941"
+kernel-time-throughput: N/A
+run-time-mean: 0.026093 [s]
+run-time-stddev: 0.000045 [s]
+run-time-median: 0.026087 [s]
+run-time-min: 0.026042 [s]
+run-time-samples: "0.026042 0.026062 0.026087 0.026116 0.026157"
+run-time-throughput: N/A
+kernel-energy-mean: 6.016846 [J]
+kernel-energy-stddev: 0.083800 [J]
+kernel-energy-median: 6.034546 [J]
+kernel-energy-min: 5.895936 [J]
+kernel-energy-max: 6.123658 [J]
+kernel-energy-samples: "5.895936 5.985535 6.034546 6.044556 6.123658"
+Verification: PASS
+********** Results for Stencil_float_5_1_0_0_1**********
+problem-size: 2048
+local-size: 256
+num-iters: 15
+core-freq: 0
+memory-freq: 0
+device-name: Intel(R) Arc(TM) A770 Graphics
+sycl-implementation: UNKNOWN
+throughput-metric: N/A
+kernel-time-mean: 0.026474 [s]
+kernel-time-stddev: 0.000017 [s]
+kernel-time-median: 0.026476 [s]
+kernel-time-min: 0.026446 [s]
+kernel-time-samples: "0.026446 0.026473 0.026476 0.026480 0.026493"
+kernel-time-throughput: N/A
+run-time-mean: 0.026654 [s]
+run-time-stddev: 0.000029 [s]
+run-time-median: 0.026652 [s]
+run-time-min: 0.026618 [s]
+run-time-samples: "0.026618 0.026648 0.026652 0.026654 0.026699"
+run-time-throughput: N/A
+kernel-energy-mean: 6.203443 [J]
+kernel-energy-stddev: 0.049179 [J]
+kernel-energy-median: 6.235474 [J]
+kernel-energy-min: 6.136108 [J]
+kernel-energy-max: 6.241699 [J]
+kernel-energy-samples: "6.136108 6.165589 6.235474 6.238343 6.241699"
+Verification: PASS
+********** Results for Stencil_int_2_1_1_1_1**********
+problem-size: 2048
+local-size: 256
+num-iters: 15
+core-freq: 0
+memory-freq: 0
+device-name: Intel(R) Arc(TM) A770 Graphics
+sycl-implementation: UNKNOWN
+throughput-metric: N/A
+kernel-time-mean: 0.012036 [s]
+kernel-time-stddev: 0.000004 [s]
+kernel-time-median: 0.012034 [s]
+kernel-time-min: 0.012034 [s]
+kernel-time-samples: "0.012034 0.012034 0.012034 0.012036 0.012042"
+kernel-time-throughput: N/A
+run-time-mean: 0.012198 [s]
+run-time-stddev: 0.000032 [s]
+run-time-median: 0.012186 [s]
+run-time-min: 0.012176 [s]
+run-time-samples: "0.012176 0.012180 0.012186 0.012195 0.012254"
+run-time-throughput: N/A
+kernel-energy-mean: 2.584595 [J]
+kernel-energy-stddev: 0.052551 [J]
+kernel-energy-median: 2.574524 [J]
+kernel-energy-min: 2.518737 [J]
+kernel-energy-max: 2.638550 [J]
+kernel-energy-samples: "2.518737 2.554016 2.574524 2.637146 2.638550"
+Verification: PASS
+********** Results for Stencil_int_3_1_1_1_1**********
+problem-size: 2048
+local-size: 256
+num-iters: 15
+core-freq: 0
+memory-freq: 0
+device-name: Intel(R) Arc(TM) A770 Graphics
+sycl-implementation: UNKNOWN
+throughput-metric: N/A
+kernel-time-mean: 0.023384 [s]
+kernel-time-stddev: 0.000015 [s]
+kernel-time-median: 0.023380 [s]
+kernel-time-min: 0.023366 [s]
+kernel-time-samples: "0.023366 0.023378 0.023380 0.023390 0.023407"
+kernel-time-throughput: N/A
+run-time-mean: 0.023557 [s]
+run-time-stddev: 0.000045 [s]
+run-time-median: 0.023543 [s]
+run-time-min: 0.023513 [s]
+run-time-samples: "0.023513 0.023529 0.023543 0.023571 0.023629"
+run-time-throughput: N/A
+kernel-energy-mean: 5.088452 [J]
+kernel-energy-stddev: 0.079954 [J]
+kernel-energy-median: 5.105713 [J]
+kernel-energy-min: 4.990112 [J]
+kernel-energy-max: 5.164001 [J]
+kernel-energy-samples: "4.990112 5.020935 5.105713 5.161499 5.164001"
+Verification: PASS
+********** Results for Stencil_int_4_1_1_1_1**********
+problem-size: 2048
+local-size: 256
+num-iters: 15
+core-freq: 0
+memory-freq: 0
+device-name: Intel(R) Arc(TM) A770 Graphics
+sycl-implementation: UNKNOWN
+throughput-metric: N/A
+kernel-time-mean: 0.038288 [s]
+kernel-time-stddev: 0.000017 [s]
+kernel-time-median: 0.038291 [s]
+kernel-time-min: 0.038264 [s]
+kernel-time-samples: "0.038264 0.038281 0.038291 0.038293 0.038311"
+kernel-time-throughput: N/A
+run-time-mean: 0.038490 [s]
+run-time-stddev: 0.000023 [s]
+run-time-median: 0.038483 [s]
+run-time-min: 0.038462 [s]
+run-time-samples: "0.038462 0.038479 0.038483 0.038508 0.038518"
+run-time-throughput: N/A
+kernel-energy-mean: 8.213538 [J]
+kernel-energy-stddev: 0.059674 [J]
+kernel-energy-median: 8.195923 [J]
+kernel-energy-min: 8.136353 [J]
+kernel-energy-max: 8.290344 [J]
+kernel-energy-samples: "8.136353 8.191589 8.195923 8.253479 8.290344"
+Verification: PASS
+********** Results for Stencil_int_5_1_0_0_1**********
+problem-size: 2048
+local-size: 256
+num-iters: 15
+core-freq: 0
+memory-freq: 0
+device-name: Intel(R) Arc(TM) A770 Graphics
+sycl-implementation: UNKNOWN
+throughput-metric: N/A
+kernel-time-mean: 0.025440 [s]
+kernel-time-stddev: 0.000024 [s]
+kernel-time-median: 0.025444 [s]
+kernel-time-min: 0.025402 [s]
+kernel-time-samples: "0.025402 0.025443 0.025444 0.025447 0.025466"
+kernel-time-throughput: N/A
+run-time-mean: 0.025620 [s]
+run-time-stddev: 0.000029 [s]
+run-time-median: 0.025619 [s]
+run-time-min: 0.025575 [s]
+run-time-samples: "0.025575 0.025616 0.025619 0.025640 0.025651"
+run-time-throughput: N/A
+kernel-energy-mean: 5.807727 [J]
+kernel-energy-stddev: 0.072412 [J]
+kernel-energy-median: 5.833496 [J]
+kernel-energy-min: 5.681397 [J]
+kernel-energy-max: 5.864746 [J]
+kernel-energy-samples: "5.681397 5.820801 5.833496 5.838196 5.864746"
+Verification: PASS

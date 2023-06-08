@@ -1,0 +1,28 @@
+********** Results for Matrix_mul**********
+problem-size: 3072
+local-size: 256
+num-iters: 1
+core-freq: 0
+memory-freq: 0
+device-name: Intel(R) Arc(TM) A770 Graphics
+sycl-implementation: UNKNOWN
+throughput-metric: N/A
+kernel-time-mean: 0.137582 [s]
+kernel-time-stddev: 0.000519 [s]
+kernel-time-median: 0.137504 [s]
+kernel-time-min: 0.136829 [s]
+kernel-time-samples: "0.136829 0.137433 0.137504 0.138018 0.138124"
+kernel-time-throughput: N/A
+run-time-mean: 0.137988 [s]
+run-time-stddev: 0.000524 [s]
+run-time-median: 0.137883 [s]
+run-time-min: 0.137248 [s]
+run-time-samples: "0.137248 0.137822 0.137883 0.138472 0.138515"
+run-time-throughput: N/A
+kernel-energy-mean: 24.381434 [J]
+kernel-energy-stddev: 0.078637 [J]
+kernel-energy-median: 24.370057 [J]
+kernel-energy-min: 24.305176 [J]
+kernel-energy-max: 24.512757 [J]
+kernel-energy-samples: "24.305176 24.342408 24.370057 24.376770 24.512757"
+Verification: PASS
