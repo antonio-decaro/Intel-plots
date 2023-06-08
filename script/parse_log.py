@@ -29,18 +29,10 @@ COLUMNS = ['bench-name', 'core-freq', 'memory-freq', 'problem-size',
 
 df = pd.DataFrame(columns=COLUMNS)
 
-
 for fname in glob.glob(f"{logs_dir}/*.log"):
     with open(fname) as input_file:
         new_row = {s: "" for s in COLUMNS}
         for line in input_file:
-            if "Results for" in line:
-                line = line.replace("*", "")
-                line = line.replace("Results for", "")
-                line = line.replace(" ", "")
-                line = line.replace("\n", "")
-                new_row['bench-name'] = line
-                continue
             for val in COLUMNS[1:]:
                 if val in line:
                     line = line.replace(f"{val}:", "")
@@ -50,10 +42,18 @@ for fname in glob.glob(f"{logs_dir}/*.log"):
                     line = line.replace("\n", "")
                     new_row[val] = line
                     break
-            if "Verification" in line:
-                df.loc[len(df)] = new_row
-                for key in new_row:
-                    new_row[key] = ""
+            else:
+                if "Results for" in line:
+                    line = line.replace("*", "")
+                    line = line.replace("Results for", "")
+                    line = line.replace(" ", "")
+                    line = line.replace("\n", "")
+                    new_row['bench-name'] = line
+                    continue
+                if "Verification" in line:
+                    df.loc[len(df)] = new_row
+                    for key in new_row:
+                        new_row[key] = ""
 
 output_file = output_dir + "/" + logs_dir[logs_dir.rindex('/') + 1:] + ".csv"
 with open(output_file, 'w') as f:
