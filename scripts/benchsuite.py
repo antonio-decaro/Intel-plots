@@ -40,12 +40,12 @@ benchmarks = {
     #     BenchArgs("matrix_mul", 50, local_size=512,  num_iters=1), # Computation 
     #     BenchArgs("matrix_mul", 50, local_size=1024, num_iters=1), # Computation 
     # ], 
-    "Stencil": [
-        BenchArgs("Stencil", 1, num_runs=15, local_size=64,   size=2048), # Spatial Locality
-        BenchArgs("Stencil", 1, num_runs=15, local_size=128,  size=2048), # Spatial Locality
-        BenchArgs("Stencil", 1, num_runs=15, local_size=256,  size=2048), # Spatial Locality
-        BenchArgs("Stencil", 1, num_runs=15, local_size=512,  size=2048), # Spatial Locality
-        BenchArgs("Stencil", 1, num_runs=15, local_size=1024, size=2048), # Spatial Locality
+    "VectorAddition": [
+        BenchArgs("opt_vec_add", 100, local_size=64  , num_iters=100000), # Spatial Locality
+        BenchArgs("opt_vec_add", 100, local_size=128 , num_iters=100000), # Spatial Locality
+        BenchArgs("opt_vec_add", 100, local_size=256 , num_iters=100000), # Spatial Locality
+        BenchArgs("opt_vec_add", 100, local_size=512 , num_iters=100000), # Spatial Locality
+        BenchArgs("opt_vec_add", 100, local_size=1024, num_iters=100000), # Spatial Locality
     ], 
 }
 
