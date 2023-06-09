@@ -22,10 +22,10 @@ if (os.path.isfile(output_dir)):
 if (not os.path.exists(output_dir)):
     os.makedirs(output_dir)
 
-COLUMNS = ['bench-name', 'core-freq', 'memory-freq', 'problem-size', 
-           'num-iters', 'kernel-time-mean', 'kernel-time-stddev', 
-           'run-time-mean', 'run-time-stddev', 'kernel-energy-mean',
-           'kernel-energy-stddev', 'kernel-energy-max']
+COLUMNS = ['bench-name', 'core-freq', 'memory-freq', 'problem-size', 'local-size', 
+           'num-iters', 'kernel-time-mean', 'kernel-time-stddev', 'kerne-time-min', 'kernel-time-max', 
+           'run-time-mean', 'run-time-stddev', 'run-time-min', 'run-time-max',
+           'kernel-energy-mean', 'kernel-energy-stddev', 'kernel-energy-max', 'kernel-energy-min']
 
 df = pd.DataFrame(columns=COLUMNS)
 
