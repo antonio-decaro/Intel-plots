@@ -2,5 +2,6 @@
 .vscode/**
 **/benchmarks/**
 **/logs/raw/**
+**.log
 **/__pycache__
 **.out
