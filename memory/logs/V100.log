@@ -1,0 +1,540 @@
+----------------------------
+Global Size: 1024
+Local Size: 32
+Execution Time: 0.292831 ms
+Memory Bandwidth: 0.0139876 GB/s
+----------------------------
+Global Size: 2048
+Local Size: 32
+Execution Time: 0.303135 ms
+Memory Bandwidth: 0.0270243 GB/s
+----------------------------
+Global Size: 4096
+Local Size: 32
+Execution Time: 0.402431 ms
+Memory Bandwidth: 0.0407126 GB/s
+----------------------------
+Global Size: 8192
+Local Size: 32
+Execution Time: 0.434143 ms
+Memory Bandwidth: 0.0754774 GB/s
+----------------------------
+Global Size: 16384
+Local Size: 32
+Execution Time: 0.659424 ms
+Memory Bandwidth: 0.0993837 GB/s
+----------------------------
+Global Size: 32768
+Local Size: 32
+Execution Time: 0.703455 ms
+Memory Bandwidth: 0.186326 GB/s
+----------------------------
+Global Size: 65536
+Local Size: 32
+Execution Time: 1.06598 ms
+Memory Bandwidth: 0.245917 GB/s
+----------------------------
+Global Size: 131072
+Local Size: 32
+Execution Time: 1.16432 ms
+Memory Bandwidth: 0.450295 GB/s
+----------------------------
+Global Size: 262144
+Local Size: 32
+Execution Time: 2.28864 ms
+Memory Bandwidth: 0.458166 GB/s
+----------------------------
+Global Size: 524288
+Local Size: 32
+Execution Time: 2.65216 ms
+Memory Bandwidth: 0.790734 GB/s
+----------------------------
+Global Size: 1048576
+Local Size: 32
+Execution Time: 4.5865 ms
+Memory Bandwidth: 0.91449 GB/s
+----------------------------
+Global Size: 2097152
+Local Size: 32
+Execution Time: 9.63994 ms
+Memory Bandwidth: 0.870193 GB/s
+----------------------------
+Global Size: 4194304
+Local Size: 32
+Execution Time: 15.1122 ms
+Memory Bandwidth: 1.11018 GB/s
+----------------------------
+Global Size: 8388608
+Local Size: 32
+Execution Time: 23.8735 ms
+Memory Bandwidth: 1.40551 GB/s
+----------------------------
+Global Size: 16777216
+Local Size: 32
+Execution Time: 38.5403 ms
+Memory Bandwidth: 1.74127 GB/s
+----------------------------
+Global Size: 33554432
+Local Size: 32
+Execution Time: 67.3638 ms
+Memory Bandwidth: 1.99243 GB/s
+----------------------------
+Global Size: 67108864
+Local Size: 32
+Execution Time: 124.534 ms
+Memory Bandwidth: 2.15552 GB/s
+----------------------------
+Global Size: 134217728
+Local Size: 32
+Execution Time: 240.56 ms
+Memory Bandwidth: 2.23175 GB/s
+----------------------------
+Global Size: 1024
+Local Size: 64
+Execution Time: 0.270305 ms
+Memory Bandwidth: 0.0151533 GB/s
+----------------------------
+Global Size: 2048
+Local Size: 64
+Execution Time: 0.659456 ms
+Memory Bandwidth: 0.0124224 GB/s
+----------------------------
+Global Size: 4096
+Local Size: 64
+Execution Time: 0.388129 ms
+Memory Bandwidth: 0.0422128 GB/s
+----------------------------
+Global Size: 8192
+Local Size: 64
+Execution Time: 0.469983 ms
+Memory Bandwidth: 0.0697217 GB/s
+----------------------------
+Global Size: 16384
+Local Size: 64
+Execution Time: 0.498689 ms
+Memory Bandwidth: 0.131417 GB/s
+----------------------------
+Global Size: 32768
+Local Size: 64
+Execution Time: 0.74032 ms
+Memory Bandwidth: 0.177048 GB/s
+----------------------------
+Global Size: 65536
+Local Size: 64
+Execution Time: 0.760864 ms
+Memory Bandwidth: 0.344535 GB/s
+----------------------------
+Global Size: 131072
+Local Size: 64
+Execution Time: 1.0281 ms
+Memory Bandwidth: 0.50996 GB/s
+----------------------------
+Global Size: 262144
+Local Size: 64
+Execution Time: 1.38342 ms
+Memory Bandwidth: 0.757957 GB/s
+----------------------------
+Global Size: 524288
+Local Size: 64
+Execution Time: 2.00192 ms
+Memory Bandwidth: 1.04757 GB/s
+----------------------------
+Global Size: 1048576
+Local Size: 64
+Execution Time: 3.8287 ms
+Memory Bandwidth: 1.09549 GB/s
+----------------------------
+Global Size: 2097152
+Local Size: 64
+Execution Time: 6.99082 ms
+Memory Bandwidth: 1.19995 GB/s
+----------------------------
+Global Size: 4194304
+Local Size: 64
+Execution Time: 13.4697 ms
+Memory Bandwidth: 1.24555 GB/s
+----------------------------
+Global Size: 8388608
+Local Size: 64
+Execution Time: 21.1446 ms
+Memory Bandwidth: 1.58691 GB/s
+----------------------------
+Global Size: 16777216
+Local Size: 64
+Execution Time: 33.578 ms
+Memory Bandwidth: 1.9986 GB/s
+----------------------------
+Global Size: 33554432
+Local Size: 64
+Execution Time: 58.1519 ms
+Memory Bandwidth: 2.30805 GB/s
+----------------------------
+Global Size: 67108864
+Local Size: 64
+Execution Time: 110.018 ms
+Memory Bandwidth: 2.43993 GB/s
+----------------------------
+Global Size: 134217728
+Local Size: 64
+Execution Time: 216.452 ms
+Memory Bandwidth: 2.48032 GB/s
+----------------------------
+Global Size: 1024
+Local Size: 128
+Execution Time: 0.280576 ms
+Memory Bandwidth: 0.0145985 GB/s
+----------------------------
+Global Size: 2048
+Local Size: 128
+Execution Time: 0.301055 ms
+Memory Bandwidth: 0.027211 GB/s
+----------------------------
+Global Size: 4096
+Local Size: 128
+Execution Time: 0.378881 ms
+Memory Bandwidth: 0.0432431 GB/s
+----------------------------
+Global Size: 8192
+Local Size: 128
+Execution Time: 0.461855 ms
+Memory Bandwidth: 0.0709487 GB/s
+----------------------------
+Global Size: 16384
+Local Size: 128
+Execution Time: 0.585728 ms
+Memory Bandwidth: 0.111888 GB/s
+----------------------------
+Global Size: 32768
+Local Size: 128
+Execution Time: 0.625665 ms
+Memory Bandwidth: 0.209492 GB/s
+----------------------------
+Global Size: 65536
+Local Size: 128
+Execution Time: 0.54064 ms
+Memory Bandwidth: 0.484877 GB/s
+----------------------------
+Global Size: 131072
+Local Size: 128
+Execution Time: 0.626688 ms
+Memory Bandwidth: 0.836601 GB/s
+----------------------------
+Global Size: 262144
+Local Size: 128
+Execution Time: 1.35168 ms
+Memory Bandwidth: 0.775758 GB/s
+----------------------------
+Global Size: 524288
+Local Size: 128
+Execution Time: 1.76333 ms
+Memory Bandwidth: 1.18931 GB/s
+----------------------------
+Global Size: 1048576
+Local Size: 128
+Execution Time: 3.38838 ms
+Memory Bandwidth: 1.23785 GB/s
+----------------------------
+Global Size: 2097152
+Local Size: 128
+Execution Time: 6.09687 ms
+Memory Bandwidth: 1.37589 GB/s
+----------------------------
+Global Size: 4194304
+Local Size: 128
+Execution Time: 11.9173 ms
+Memory Bandwidth: 1.40781 GB/s
+----------------------------
+Global Size: 8388608
+Local Size: 128
+Execution Time: 19.8041 ms
+Memory Bandwidth: 1.69431 GB/s
+----------------------------
+Global Size: 16777216
+Local Size: 128
+Execution Time: 31.8956 ms
+Memory Bandwidth: 2.10402 GB/s
+----------------------------
+Global Size: 33554432
+Local Size: 128
+Execution Time: 57.5467 ms
+Memory Bandwidth: 2.33233 GB/s
+----------------------------
+Global Size: 67108864
+Local Size: 128
+Execution Time: 106.867 ms
+Memory Bandwidth: 2.51187 GB/s
+----------------------------
+Global Size: 134217728
+Local Size: 128
+Execution Time: 201.56 ms
+Memory Bandwidth: 2.66358 GB/s
+----------------------------
+Global Size: 1024
+Local Size: 256
+Execution Time: 0.277504 ms
+Memory Bandwidth: 0.0147601 GB/s
+----------------------------
+Global Size: 2048
+Local Size: 256
+Execution Time: 0.309249 ms
+Memory Bandwidth: 0.02649 GB/s
+----------------------------
+Global Size: 4096
+Local Size: 256
+Execution Time: 0.335871 ms
+Memory Bandwidth: 0.0487806 GB/s
+----------------------------
+Global Size: 8192
+Local Size: 256
+Execution Time: 0.430079 ms
+Memory Bandwidth: 0.0761907 GB/s
+----------------------------
+Global Size: 16384
+Local Size: 256
+Execution Time: 0.508961 ms
+Memory Bandwidth: 0.128764 GB/s
+----------------------------
+Global Size: 32768
+Local Size: 256
+Execution Time: 0.544768 ms
+Memory Bandwidth: 0.240602 GB/s
+----------------------------
+Global Size: 65536
+Local Size: 256
+Execution Time: 0.582688 ms
+Memory Bandwidth: 0.449887 GB/s
+----------------------------
+Global Size: 131072
+Local Size: 256
+Execution Time: 0.675808 ms
+Memory Bandwidth: 0.775794 GB/s
+----------------------------
+Global Size: 262144
+Local Size: 256
+Execution Time: 1.16733 ms
+Memory Bandwidth: 0.89827 GB/s
+----------------------------
+Global Size: 524288
+Local Size: 256
+Execution Time: 1.51146 ms
+Memory Bandwidth: 1.3875 GB/s
+----------------------------
+Global Size: 1048576
+Local Size: 256
+Execution Time: 3.03101 ms
+Memory Bandwidth: 1.3838 GB/s
+----------------------------
+Global Size: 2097152
+Local Size: 256
+Execution Time: 6.13786 ms
+Memory Bandwidth: 1.3667 GB/s
+----------------------------
+Global Size: 4194304
+Local Size: 256
+Execution Time: 13.4185 ms
+Memory Bandwidth: 1.25031 GB/s
+----------------------------
+Global Size: 8388608
+Local Size: 256
+Execution Time: 19.6014 ms
+Memory Bandwidth: 1.71184 GB/s
+----------------------------
+Global Size: 16777216
+Local Size: 256
+Execution Time: 33.4008 ms
+Memory Bandwidth: 2.0092 GB/s
+----------------------------
+Global Size: 33554432
+Local Size: 256
+Execution Time: 55.6257 ms
+Memory Bandwidth: 2.41287 GB/s
+----------------------------
+Global Size: 67108864
+Local Size: 256
+Execution Time: 101.892 ms
+Memory Bandwidth: 2.63451 GB/s
+----------------------------
+Global Size: 134217728
+Local Size: 256
+Execution Time: 198.641 ms
+Memory Bandwidth: 2.70272 GB/s
+----------------------------
+Global Size: 1024
+Local Size: 512
+Execution Time: 0.283648 ms
+Memory Bandwidth: 0.0144404 GB/s
+----------------------------
+Global Size: 2048
+Local Size: 512
+Execution Time: 0.313311 ms
+Memory Bandwidth: 0.0261465 GB/s
+----------------------------
+Global Size: 4096
+Local Size: 512
+Execution Time: 0.287744 ms
+Memory Bandwidth: 0.0569395 GB/s
+----------------------------
+Global Size: 8192
+Local Size: 512
+Execution Time: 0.387073 ms
+Memory Bandwidth: 0.0846559 GB/s
+----------------------------
+Global Size: 16384
+Local Size: 512
+Execution Time: 0.416769 ms
+Memory Bandwidth: 0.157248 GB/s
+----------------------------
+Global Size: 32768
+Local Size: 512
+Execution Time: 0.581632 ms
+Memory Bandwidth: 0.225352 GB/s
+----------------------------
+Global Size: 65536
+Local Size: 512
+Execution Time: 0.568352 ms
+Memory Bandwidth: 0.461235 GB/s
+----------------------------
+Global Size: 131072
+Local Size: 512
+Execution Time: 0.626688 ms
+Memory Bandwidth: 0.836601 GB/s
+----------------------------
+Global Size: 262144
+Local Size: 512
+Execution Time: 0.988191 ms
+Memory Bandwidth: 1.06111 GB/s
+----------------------------
+Global Size: 524288
+Local Size: 512
+Execution Time: 1.65577 ms
+Memory Bandwidth: 1.26657 GB/s
+----------------------------
+Global Size: 1048576
+Local Size: 512
+Execution Time: 2.89178 ms
+Memory Bandwidth: 1.45042 GB/s
+----------------------------
+Global Size: 2097152
+Local Size: 512
+Execution Time: 5.55517 ms
+Memory Bandwidth: 1.51005 GB/s
+----------------------------
+Global Size: 4194304
+Local Size: 512
+Execution Time: 11.9522 ms
+Memory Bandwidth: 1.4037 GB/s
+----------------------------
+Global Size: 8388608
+Local Size: 512
+Execution Time: 18.3941 ms
+Memory Bandwidth: 1.8242 GB/s
+----------------------------
+Global Size: 16777216
+Local Size: 512
+Execution Time: 29.9756 ms
+Memory Bandwidth: 2.23879 GB/s
+----------------------------
+Global Size: 33554432
+Local Size: 512
+Execution Time: 53.5603 ms
+Memory Bandwidth: 2.50592 GB/s
+----------------------------
+Global Size: 67108864
+Local Size: 512
+Execution Time: 96.939 ms
+Memory Bandwidth: 2.76912 GB/s
+----------------------------
+Global Size: 134217728
+Local Size: 512
+Execution Time: 187.417 ms
+Memory Bandwidth: 2.86459 GB/s
+----------------------------
+Global Size: 1024
+Local Size: 1024
+Execution Time: 0.277504 ms
+Memory Bandwidth: 0.0147601 GB/s
+----------------------------
+Global Size: 2048
+Local Size: 1024
+Execution Time: 0.293888 ms
+Memory Bandwidth: 0.0278746 GB/s
+----------------------------
+Global Size: 4096
+Local Size: 1024
+Execution Time: 0.300064 ms
+Memory Bandwidth: 0.0546017 GB/s
+----------------------------
+Global Size: 8192
+Local Size: 1024
+Execution Time: 0.341023 ms
+Memory Bandwidth: 0.0960874 GB/s
+----------------------------
+Global Size: 16384
+Local Size: 1024
+Execution Time: 0.308192 ms
+Memory Bandwidth: 0.212647 GB/s
+----------------------------
+Global Size: 32768
+Local Size: 1024
+Execution Time: 0.510975 ms
+Memory Bandwidth: 0.256514 GB/s
+----------------------------
+Global Size: 65536
+Local Size: 1024
+Execution Time: 0.650241 ms
+Memory Bandwidth: 0.403149 GB/s
+----------------------------
+Global Size: 131072
+Local Size: 1024
+Execution Time: 0.680992 ms
+Memory Bandwidth: 0.769889 GB/s
+----------------------------
+Global Size: 262144
+Local Size: 1024
+Execution Time: 0.988128 ms
+Memory Bandwidth: 1.06117 GB/s
+----------------------------
+Global Size: 524288
+Local Size: 1024
+Execution Time: 1.5688 ms
+Memory Bandwidth: 1.33679 GB/s
+----------------------------
+Global Size: 1048576
+Local Size: 1024
+Execution Time: 2.7392 ms
+Memory Bandwidth: 1.53121 GB/s
+----------------------------
+Global Size: 2097152
+Local Size: 1024
+Execution Time: 5.2808 ms
+Memory Bandwidth: 1.58851 GB/s
+----------------------------
+Global Size: 4194304
+Local Size: 1024
+Execution Time: 10.9476 ms
+Memory Bandwidth: 1.53251 GB/s
+----------------------------
+Global Size: 8388608
+Local Size: 1024
+Execution Time: 19.074 ms
+Memory Bandwidth: 1.75917 GB/s
+----------------------------
+Global Size: 16777216
+Local Size: 1024
+Execution Time: 29.7155 ms
+Memory Bandwidth: 2.25838 GB/s
+----------------------------
+Global Size: 33554432
+Local Size: 1024
+Execution Time: 50.0941 ms
+Memory Bandwidth: 2.67931 GB/s
+----------------------------
+Global Size: 67108864
+Local Size: 1024
+Execution Time: 92.3074 ms
+Memory Bandwidth: 2.90806 GB/s
+----------------------------
+Global Size: 134217728
+Local Size: 1024
+Execution Time: 177.664 ms
+Memory Bandwidth: 3.02183 GB/s

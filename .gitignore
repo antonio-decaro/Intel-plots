@@ -1,5 +1,6 @@
 .venv/**
 .vscode/**
-benchmarks/**
-logs/raw/**
-scripts/plots/__pycache__
+**/benchmarks/**
+**/logs/raw/**
+**/__pycache__
+**.out
