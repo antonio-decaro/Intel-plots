@@ -2,3 +2,4 @@
 .vscode/**
 benchmarks/**
 logs/raw/**
+scripts/plots/__pycache__

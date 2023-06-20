@@ -41,11 +41,8 @@ benchmarks = {
     #     BenchArgs("matrix_mul", 50, local_size=1024, num_iters=1), # Computation 
     # ], 
     "VectorAddition": [
-        BenchArgs("opt_vec_add", 100, local_size=64  , num_iters=100000), # Spatial Locality
-        BenchArgs("opt_vec_add", 100, local_size=128 , num_iters=100000), # Spatial Locality
-        BenchArgs("opt_vec_add", 100, local_size=256 , num_iters=100000), # Spatial Locality
-        BenchArgs("opt_vec_add", 100, local_size=512 , num_iters=100000), # Spatial Locality
-        BenchArgs("opt_vec_add", 100, local_size=1024, num_iters=100000), # Spatial Locality
+        BenchArgs("opt_vec_add", 100, size=2097152, local_size=32, num_iters=1000),
+        BenchArgs("vec_add",     100, size=2097152, local_size=32, num_iters=1000),
     ], 
 }
 

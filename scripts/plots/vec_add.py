@@ -1,3 +1,4 @@
+from plot_utils import check_input
 import os
 import sys
 import pandas as pd
@@ -7,19 +8,7 @@ from matplotlib.cm import ScalarMappable
 from matplotlib.colors import Normalize
 from sklearn.preprocessing import MinMaxScaler
 
-
-if len(sys.argv) < 2:
-    print(f"Usage: {sys.argv[0]} <csv_file> [out_plot]")
-    exit(1)
-
-csv_file = os.path.abspath(sys.argv[1])
-out_plot = os.path.abspath(sys.argv[2]) if len(sys.argv) >= 3 else None
-
-if not os.path.exists(csv_file) or not os.path.isfile(csv_file):
-    print(f"Error: {sys.argv[1]} doesn't exists or it's not a file")
-    exit(1) 
-
-df = pd.read_csv(csv_file)
+df, out_plot = check_input()
 
 substitutions = {
     'OptimizedVectorAddition_fp32_sg8':   'fp32 sg8',
@@ -35,9 +24,10 @@ substitutions = {
 df['bench-name'] = df['bench-name'].replace(substitutions)
 
 scaler = MinMaxScaler()
-kernel_time = df['kernel-time-mean'].values.reshape(-1, 1)
-normalized_kernel_time = scaler.fit_transform(kernel_time)
-df['kernel-time-mean'] = normalized_kernel_time
+# kernel_time = df['kernel-time-mean'].values.reshape(-1, 1)
+# normalized_kernel_time = scaler.fit_transform(kernel_time)
+# df['kernel-time-mean'] = normalized_kernel_time
+df['kernel-time-mean'] *= 1000000
 
 df_grouped = df.groupby(['bench-name', 'local-size'])['kernel-time-mean'].mean().reset_index()
 
@@ -54,7 +44,7 @@ for i, type in enumerate(df_grouped['bench-name'].unique()):
     plt.bar(x_pos + i * bar_width, data['kernel-time-mean'], width=bar_width, label=type)
 
 plt.xlabel('Local Size')
-plt.ylabel('Normalized Execution Time')
+plt.ylabel('Execution Time (us)')
 plt.title('Vector Addition: Arc A770')
 plt.xticks(x_pos + bar_width * (len(df_grouped['bench-name'].unique()) - 1) / 2, df_grouped['local-size'].unique())
 plt.legend()

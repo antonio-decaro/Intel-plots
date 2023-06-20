@@ -1,25 +1,12 @@
-import os
-import sys
-import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 from matplotlib.cm import ScalarMappable
 from matplotlib.colors import Normalize
+from plot_utils import check_input
 from sklearn.preprocessing import MinMaxScaler
 
-
-if len(sys.argv) < 2:
-    print(f"Usage: {sys.argv[0]} <csv_file> [out_plot]")
-    exit(1)
-
-csv_file = os.path.abspath(sys.argv[1])
-out_plot = os.path.abspath(sys.argv[2]) if len(sys.argv) >= 3 else None
-
-if not os.path.exists(csv_file) or not os.path.isfile(csv_file):
-    print(f"Error: {sys.argv[1]} doesn't exists or it's not a file")
-    exit(1) 
-
-df = pd.read_csv(csv_file)
+df, out_plot = check_input()
 
 scaler = MinMaxScaler()
 kernel_time = df['kernel-time-mean'].values.reshape(-1, 1)
