@@ -44,6 +44,9 @@ benchmarks = {
     "LocalMemory" : [
         BenchArgs("local_mem", 1, size=1048576),
     ],
+    "Host-Device Bandwidth": [
+        BenchArgs("host_device_bandwidth", 1, )
+    ]
 }
 
 
@@ -70,7 +73,7 @@ def get_bench_instance(bench_list: List[BenchArgs], iter: int) -> BenchArgs:
 def main():
 
     if (len(sys.argv) < 3):
-        print(f"Usage: {sys.argv[0]} </path/to/sycl/bench> </path/to/out/dir> [append (default) | replace]")
+        print(f"Usage: {sys.argv[0]} /path/to/sycl/bench /path/to/out/dir [append (default) | replace]")
         exit(1)
     
     append = True
