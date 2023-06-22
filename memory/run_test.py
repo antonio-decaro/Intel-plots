@@ -13,7 +13,7 @@ def double(n):
         num *= 2
 
 global_sizes = [n for n in double(NUM_GLOBALS)]
-local_sizes = [32]#, 64, 128, 256, 512, 1024]
+local_sizes = [32, 64, 128, 256, 512, 1024]
 
 if os.path.exists(FNAME):
     os.remove(FNAME)
