@@ -3,7 +3,7 @@ import os
 import pandas as pd
 from typing import List
 
-def check_input():
+def check_single_input():
     if len(sys.argv) < 2:
         print(f"Usage: {sys.argv[0]} <csv_file> [out_plot]")
         exit(1)
@@ -17,3 +17,24 @@ def check_input():
 
     df = pd.read_csv(csv_file)
     return (df, out_plot)
+
+
+def check_double_input():
+    if len(sys.argv) < 2:
+        print(f"Usage: {sys.argv[0]} <csv_file1> <csv_file2> [out_plot]")
+        exit(1)
+
+    csv_file1 = os.path.abspath(sys.argv[1])
+    csv_file2 = os.path.abspath(sys.argv[2])
+    out_plot = os.path.abspath(sys.argv[3]) if len(sys.argv) >= 4 else None
+
+    if not os.path.exists(csv_file1) or not os.path.isfile(csv_file1):
+        print(f"Error: {sys.argv[1]} doesn't exists or it's not a file")
+        exit(1) 
+    if not os.path.exists(csv_file2) or not os.path.isfile(csv_file2):
+        print(f"Error: {sys.argv[2]} doesn't exists or it's not a file")
+        exit(1)
+
+    df1 = pd.read_csv(csv_file1)
+    df2 = pd.read_csv(csv_file2)
+    return (df1, df2, out_plot)

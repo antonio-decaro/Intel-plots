@@ -1,4 +1,4 @@
-from plot_utils import check_input
+from plot_utils import check_single_input
 import os
 import sys
 import pandas as pd
@@ -8,7 +8,7 @@ from matplotlib.cm import ScalarMappable
 from matplotlib.colors import Normalize
 from sklearn.preprocessing import MinMaxScaler
 
-df, out_plot = check_input()
+df, out_plot = check_single_input()
 
 substitutions = {
     'OptimizedVectorAddition_fp32_sg8':   'fp32 sg8',

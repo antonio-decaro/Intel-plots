@@ -1,4 +1,4 @@
-from plot_utils import check_input
+from plot_utils import check_single_input
 import os
 import sys
 import pandas as pd
@@ -9,7 +9,7 @@ from matplotlib.colors import Normalize
 from sklearn.preprocessing import MinMaxScaler
 from scipy.stats import hmean
 
-df, out_plot = check_input()
+df, out_plot = check_single_input()
 
 substitutions = {
     'OptimizedVectorAddition_int16_sg8':  'SIMD int16 sg8',

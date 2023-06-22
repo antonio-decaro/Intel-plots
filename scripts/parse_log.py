@@ -22,10 +22,11 @@ if (os.path.isfile(output_dir)):
 if (not os.path.exists(output_dir)):
     os.makedirs(output_dir)
 
-COLUMNS = ['bench-name', 'core-freq', 'memory-freq', 'problem-size', 'local-size', 
-           'num-iters', 'kernel-time-mean', 'kernel-time-stddev', 'kerne-time-min', 'kernel-time-max', 
-           'run-time-mean', 'run-time-stddev', 'run-time-min', 'run-time-max',
-           'kernel-energy-mean', 'kernel-energy-stddev', 'kernel-energy-max', 'kernel-energy-min']
+COLUMNS = ['bench-name', 'core-freq', 'memory-freq', 'problem-size', 'local-size', 'num-iters', 'throughput-metric',
+           'kernel-time-mean', 'kernel-time-stddev', 'kerne-time-min', 'kernel-time-throughput',
+           'run-time-mean', 'run-time-stddev', 'run-time-min', 'run-time-throughput',
+           'kernel-energy-mean', 'kernel-energy-stddev', 'kernel-energy-max', 'kernel-energy-min'
+]
 
 df = pd.DataFrame(columns=COLUMNS)
 
@@ -36,6 +37,7 @@ for fname in glob.glob(f"{logs_dir}/*.log"):
             for val in COLUMNS[1:]:
                 if val in line:
                     line = line.replace(f"{val}:", "")
+                    line = line.replace("[GiB/s]", "")
                     line = line.replace("[s]", "")  
                     line = line.replace("[J]", "")  
                     line = line.replace(" ", "")

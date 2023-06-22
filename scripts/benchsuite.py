@@ -9,16 +9,20 @@ from tqdm import tqdm
 class BenchArgs:
     def __init__(self, name: str, num_exec: int, *,
                  size: int = 3072, num_iters: int = 1, 
-                 num_runs: int = 5, local_size:int = 256) -> None:
+                 num_runs: int = 5, local_size:int = 256,
+                 device=None) -> None:
         self.name = name
         self.num_exec = num_exec
         self.size = size
         self.num_iters = num_iters
         self.num_runs = num_runs
         self.local_size = local_size
+        self.device = device
     
     def parse(self) -> typing.List[str]:
         ret = [f"./{self.name}"]
+        if not self.device is None:
+            ret += [f"--device={self.device}"]
         if self.size > -1:
             ret += [f"--size={self.size}"]
         if self.num_iters > -1:
@@ -33,17 +37,13 @@ class BenchArgs:
         return " ".join(self.parse())
     
 benchmarks = {
-    # "MatrixMultiplication": [ 
-    #     BenchArgs("matrix_mul", 50, local_size=64,   num_iters=1), # Computation 
-    #     BenchArgs("matrix_mul", 50, local_size=128,  num_iters=1), # Computation 
-    #     BenchArgs("matrix_mul", 50, local_size=256,  num_iters=1), # Computation 
-    #     BenchArgs("matrix_mul", 50, local_size=512,  num_iters=1), # Computation 
-    #     BenchArgs("matrix_mul", 50, local_size=1024, num_iters=1), # Computation 
+    # "VectorAddition": [
+    #     BenchArgs("opt_vec_add", 100, size=2097152, local_size=32, num_iters=1000),
+    #     BenchArgs("vec_add",     100, size=2097152, local_size=32, num_iters=1000),
     # ], 
-    "VectorAddition": [
-        BenchArgs("opt_vec_add", 100, size=2097152, local_size=32, num_iters=1000),
-        BenchArgs("vec_add",     100, size=2097152, local_size=32, num_iters=1000),
-    ], 
+    "LocalMemory" : [
+        BenchArgs("local_mem", 1, size=1048576),
+    ],
 }
 
 

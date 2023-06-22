@@ -3,10 +3,10 @@ import numpy as np
 import pandas as pd
 from matplotlib.cm import ScalarMappable
 from matplotlib.colors import Normalize
-from plot_utils import check_input
+from plot_utils import check_single_input
 from sklearn.preprocessing import MinMaxScaler
 
-df, out_plot = check_input()
+df, out_plot = check_single_input()
 
 scaler = MinMaxScaler()
 kernel_time = df['kernel-time-mean'].values.reshape(-1, 1)
