@@ -41,12 +41,26 @@ benchmarks = {
     #     BenchArgs("opt_vec_add", 100, size=2097152, local_size=32, num_iters=1000),
     #     BenchArgs("vec_add",     100, size=2097152, local_size=32, num_iters=1000),
     # ], 
+
     "LocalMemory" : [
-        BenchArgs("local_mem", 1, size=1048576),
+        BenchArgs("local_mem", 5, size=1024 * (2**1)),
+        BenchArgs("local_mem", 5, size=1024 * (2**2)),
+        BenchArgs("local_mem", 5, size=1024 * (2**3)),
+        BenchArgs("local_mem", 5, size=1024 * (2**4)),
+        BenchArgs("local_mem", 5, size=1024 * (2**5)),
+        BenchArgs("local_mem", 5, size=1024 * (2**6)),
+        BenchArgs("local_mem", 5, size=1024 * (2**7)),
+        BenchArgs("local_mem", 5, size=1024 * (2**8)),
+        BenchArgs("local_mem", 5, size=1024 * (2**9)),
+        BenchArgs("local_mem", 5, size=1024 * (2**10)),
+        BenchArgs("local_mem", 5, size=1024 * (2**11)),
+        BenchArgs("local_mem", 5, size=1024 * (2**12)),
+        BenchArgs("local_mem", 5, size=1024 * (2**13)),
+        BenchArgs("local_mem", 5, size=1024 * (2**14)),
     ],
-    "Host-Device Bandwidth": [
-        BenchArgs("host_device_bandwidth", 1, )
-    ]
+    # "HostDeviceBandwidth": [
+    #     BenchArgs("host_device_bandwidth", 1, size=256, local_size=32)
+    # ]
 }
 
 

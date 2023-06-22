@@ -38,6 +38,7 @@ for fname in glob.glob(f"{logs_dir}/*.log"):
                 if val in line:
                     line = line.replace(f"{val}:", "")
                     line = line.replace("[GiB/s]", "")
+                    line = line.replace("[GiB]", "")
                     line = line.replace("[s]", "")  
                     line = line.replace("[J]", "")  
                     line = line.replace(" ", "")
