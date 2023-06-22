@@ -1,32 +1,40 @@
+/*
+    Usage: ./mem_test.out [global size] [local size] [num iters]
+*/
+
 #include <sycl/sycl.hpp>
 #include <iostream>
 #include <chrono>
 
 using Type = float;
+constexpr int DEF_GLOBAL_SIZE = 1024 * 1024 * 8;
+constexpr int DEF_LOCAL_ZIE = 512;
+constexpr int DEF_NUM_ITERS = 1;
 
 int main(int argc, char** argv) {
 
     // Retrive Input
-    if (argc != 3) {
-        std::cerr << "Usage: " << argv[0] << " <global_size> <local_size>" << std::endl;
-        return 1;
-    }
-    size_t global_size = atoi(argv[1]);
-    size_t local_size = atoi(argv[2]);
+    size_t global_size = argc >= 2 ? atoi(argv[1]) : DEF_GLOBAL_SIZE;
+    size_t local_size = argc >= 3 ? atoi(argv[2]) : DEF_LOCAL_ZIE;
+    size_t num_iters = argc >= 4 ? atoi(argv[3]) : DEF_NUM_ITERS;
 
     // Create SYCL queue and device selector
     sycl::queue myQueue(sycl::gpu_selector_v, sycl::property::queue::enable_profiling{});
 
-    auto vecA = sycl::malloc_shared<Type>(global_size, myQueue);
-    auto vecB = sycl::malloc_shared<Type>(global_size, myQueue);
-    auto vecC = sycl::malloc_shared<Type>(global_size, myQueue);
+    auto vecH = sycl::malloc_host<Type>(global_size, myQueue);
+    auto vecA = sycl::malloc_device<Type>(global_size, myQueue);
+    auto vecB = sycl::malloc_device<Type>(global_size, myQueue);
+    auto vecC = sycl::malloc_device<Type>(global_size, myQueue);
 
     // Initialize input data
     {
         for (size_t i = 0; i < global_size; i++) {
-            vecA[i] = static_cast<Type>(i);
-            vecB[i] = static_cast<Type>(i);
+            vecH[i] = static_cast<Type>(i);
         }
+        myQueue.copy<Type>(vecH, vecA, global_size);
+        myQueue.copy<Type>(vecH, vecB, global_size);
+        myQueue.fill<Type>(vecC, static_cast<Type>(0), global_size);
+        myQueue.wait();
     }
 
     // Submit the SYCL kernel
@@ -38,12 +46,15 @@ int main(int argc, char** argv) {
             size_t globalIdx = item.get_global_id(0);
             size_t localIdx = item.get_local_id(0);
 
-            // Load data from global memory to local memory
-            localAcc[localIdx] = vecA[globalIdx] + vecB[globalIdx];
-            item.barrier(sycl::access::fence_space::local_space);
+            // Iterate to increase the GPU time
+            for (int k = 0; k < num_iters; k++) {
+                // Load data from global memory to local memory
+                localAcc[localIdx] = vecA[globalIdx] + vecB[globalIdx];
+                item.barrier(sycl::access::fence_space::local_space);
 
-            // Store data from local memory to global memory
-            vecC[globalIdx] = localAcc[localIdx];
+                // Store data from local memory to global memory
+                vecC[globalIdx] = localAcc[localIdx];
+            }
         });
     });
     myQueue.wait_and_throw();
@@ -61,15 +72,19 @@ int main(int argc, char** argv) {
     std::cout << "----------------------------" << std::endl;
     std::cout << "Global Size: " << global_size << std::endl;
     std::cout << "Local Size: " << local_size << std::endl;
+    std::cout << "Num Iterations: " << num_iters << std::endl;
     std::cout << "Execution Time: " << (executionTime / 1e6) << " ms\n";
     std::cout << "Memory Bandwidth: " << bandwidthGBs << " GB/s\n";
 
     // Verify the result (optional)
     {
+        myQueue.copy(vecC, vecH, global_size);
+        myQueue.wait();
+
         for (size_t i = 0; i < global_size; i++) {
             Type expected = 2.0f * i;  // The result should be twice the value of each input element
-            if (vecC[i] != expected) {
-                std::cout << "Error: Mismatch at index " << i << ". Expected: " << expected << ", Actual: " << vecC[i] << std::endl;
+            if (vecH[i] != expected) {
+                std::cout << "Error: Mismatch at index " << i << ". Expected: " << expected << ", Actual: " << vecH[i] << std::endl;
                 break;
             }
         }
