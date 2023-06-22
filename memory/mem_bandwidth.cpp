@@ -21,16 +21,16 @@ int main(int argc, char** argv) {
     // Create SYCL queue and device selector
     sycl::queue myQueue(sycl::gpu_selector_v, sycl::property::queue::enable_profiling{});
 
-    auto vecH = sycl::malloc_host<Type>(global_size, myQueue);
+    auto vecH = sycl::malloc_shared<Type>(global_size, myQueue);
     auto vecA = sycl::malloc_device<Type>(global_size, myQueue);
     auto vecB = sycl::malloc_device<Type>(global_size, myQueue);
     auto vecC = sycl::malloc_device<Type>(global_size, myQueue);
 
     // Initialize input data
     {
-        for (size_t i = 0; i < global_size; i++) {
-            vecH[i] = static_cast<Type>(i);
-        }
+        myQueue.parallel_for(global_size, [=](auto i) {
+            vecH[i] = i;
+        }).wait();
         myQueue.copy<Type>(vecH, vecA, global_size);
         myQueue.copy<Type>(vecH, vecB, global_size);
         myQueue.fill<Type>(vecC, static_cast<Type>(0), global_size);
