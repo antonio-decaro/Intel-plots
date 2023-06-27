@@ -21,7 +21,7 @@ def check_single_input():
 
 def check_double_input():
     if len(sys.argv) < 2:
-        print(f"Usage: {sys.argv[0]} <csv_file1> <csv_file2> [out_plot]")
+        print(f"Usage: {sys.argv[0]} <csv_gpu1> <csv_gpu2> [out_plot]")
         exit(1)
 
     csv_file1 = os.path.abspath(sys.argv[1])
