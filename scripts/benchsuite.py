@@ -37,10 +37,9 @@ class BenchArgs:
         return " ".join(self.parse())
     
 benchmarks = {
-    # "VectorAddition": [
-    #     BenchArgs("opt_vec_add", 100, size=2097152, local_size=32, num_iters=1000),
-    #     BenchArgs("vec_add",     100, size=2097152, local_size=32, num_iters=1000),
-    # ], 
+    "VectorAddition": [
+        BenchArgs("vec_add", 100, size=2097152, local_size=1024, num_iters=1000),
+    ], 
 
     # "LocalMemory" : [
     #     BenchArgs("local_mem", 5, size=1024 * (2**1)),
@@ -58,9 +57,9 @@ benchmarks = {
     #     BenchArgs("local_mem", 5, size=1024 * (2**13)),
     #     BenchArgs("local_mem", 5, size=1024 * (2**14)),
     # ],
-    "HostDeviceBandwidth": [
-        BenchArgs("host_device_bandwidth", 1, size=512, local_size=32, num_runs=10)
-    ]
+    # "HostDeviceBandwidth": [
+    #     BenchArgs("host_device_bandwidth", 1, size=512, local_size=32, num_runs=10)
+    # ]
 }
 
 
