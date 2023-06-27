@@ -38,7 +38,7 @@ class BenchArgs:
     
 benchmarks = {
     "VectorAddition": [
-        BenchArgs("vec_add", 100, size=2097152, local_size=1024, num_iters=1000, num_exec=1),
+        BenchArgs("vec_add", 100, size=2097152, local_size=1024, num_iters=1000, num_runs=1),
     ], 
 
     # "LocalMemory" : [
