@@ -1,10 +1,5 @@
 from plot_utils import check_double_input
-import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
-from matplotlib.cm import ScalarMappable
-from matplotlib.colors import Normalize
-from sklearn.preprocessing import MinMaxScaler
 from scipy.stats import hmean
 
 data_gpu1, data_gpu2, out_file = check_double_input()
@@ -27,7 +22,6 @@ to_replace = {
 data_gpu1 = data_gpu1.replace(to_replace).groupby('bench-name')['kernel-time-mean'].apply(lambda x: hmean(x)).reset_index()
 data_gpu2 = data_gpu2.replace(to_replace).groupby('bench-name')['kernel-time-mean'].apply(lambda x: hmean(x)).reset_index()
 
-scaler = MinMaxScaler()
 data_gpu1['kernel-time-mean'] *= 1000
 data_gpu2['kernel-time-mean'] *= 1000
 
@@ -47,8 +41,8 @@ bar1 = ax.barh(ind, time1, height=width, color='b', label='A770')
 bar2 = ax.barh([i + width for i in ind], time2, height=width, color='g', label='V100')
 
 # Aggiungi etichette, titolo e legenda
-ax.set_xlabel('us')
-ax.set_title('Execution Time')
+ax.set_xlabel('Milliseconds (ms)')
+ax.set_title('Vector Addition: ARC A770 vs. Tesla V100')
 ax.set_yticks(ind)
 ax.set_yticklabels(data_gpu1['bench-name'])
 ax.legend()
