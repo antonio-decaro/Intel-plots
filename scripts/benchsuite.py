@@ -38,7 +38,22 @@ class BenchArgs:
     
 benchmarks = {
     "VectorAddition": [
-        BenchArgs("vec_add", 100, size=2097152, local_size=1024, num_iters=1000, num_runs=1),
+        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**0, num_runs=100),
+        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**1, num_runs=100),
+        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**2, num_runs=100),
+        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**3, num_runs=100),
+        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**4, num_runs=100),
+        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**5, num_runs=100),
+        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**6, num_runs=100),
+        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**7, num_runs=100),
+        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**8, num_runs=100),
+        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**9, num_runs=100),
+        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**10, num_runs=100),
+        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**11, num_runs=100),
+        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**12, num_runs=100),
+        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**13, num_runs=100),
+        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**14, num_runs=100),
+        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**15, num_runs=100),
     ], 
 
     # "LocalMemory" : [
