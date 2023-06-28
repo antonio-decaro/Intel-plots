@@ -67,7 +67,7 @@ if output_dir is None:
     output = StringIO()
     df.to_csv(output, index=False)
     output.seek(0)
-    print(output.read())
+    print(output.read(), end='')
 else:
     output_file = output_dir + "/" + logs_dir[logs_dir.rindex('/') + 1:] + ".csv"
     with open(output_file, 'w') as f:
