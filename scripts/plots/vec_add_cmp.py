@@ -1,6 +1,4 @@
-from plot_utils import check_single_input
-import os
-import sys
+from plot_utils import check_double_input
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -9,21 +7,9 @@ from matplotlib.colors import Normalize
 from sklearn.preprocessing import MinMaxScaler
 from scipy.stats import hmean
 
-df, out_plot = check_single_input()
+data_gpu1, data_gpu2, out_file = check_double_input()
 
-substitutions = {
-    'OptimizedVectorAddition_int16_sg8':  'SIMD int16 sg8',
-    'OptimizedVectorAddition_int16_sg16': 'SIMD int16 sg16',
-    'OptimizedVectorAddition_int16_sg32': 'SIMD int16 sg32',
-    'OptimizedVectorAddition_int32_sg8':  'SIMD int32 sg8',
-    'OptimizedVectorAddition_int32_sg16': 'SIMD int32 sg16',
-    'OptimizedVectorAddition_int32_sg32': 'SIMD int32 sg32',
-    'OptimizedVectorAddition_fp16_sg8':   'SIMD fp16 sg8',
-    'OptimizedVectorAddition_fp16_sg16':  'SIMD fp16 sg16',
-    'OptimizedVectorAddition_fp16_sg32':  'SIMD fp16 sg32',
-    'OptimizedVectorAddition_fp32_sg8':   'SIMD fp32 sg8',
-    'OptimizedVectorAddition_fp32_sg16':  'SIMD fp32 sg16',
-    'OptimizedVectorAddition_fp32_sg32':  'SIMD fp32 sg32',
+to_replace = {
     'VectorAddition_int16_sg8':      'int16 sg8',
     'VectorAddition_int32_sg8':      'int32 sg8',
     'VectorAddition_fp16_sg8':       'fp16  sg8',
@@ -37,34 +23,40 @@ substitutions = {
     'VectorAddition_fp16_sg32':       'fp16  sg32',
     'VectorAddition_fp32_sg32':       'fp32  sg32',
 }
-df['bench-name'] = df['bench-name'].replace(substitutions)
+
+data_gpu1 = data_gpu1.replace(to_replace).groupby('bench-name')['kernel-time-mean'].apply(lambda x: hmean(x)).reset_index()
+data_gpu2 = data_gpu2.replace(to_replace).groupby('bench-name')['kernel-time-mean'].apply(lambda x: hmean(x)).reset_index()
 
 scaler = MinMaxScaler()
-kernel_time = df['kernel-time-mean'].values.reshape(-1, 1)
-normalized_kernel_time = scaler.fit_transform(kernel_time)
-df['kernel-time-mean'] = normalized_kernel_time
-# df['kernel-time-mean'] *= 1000000
+data_gpu1['kernel-time-mean'] *= 1000
+data_gpu2['kernel-time-mean'] *= 1000
 
-# df_grouped = df.groupby('bench-name')['kernel-time-mean'].apply(lambda x: hmean(x))
-df_grouped = df.groupby('bench-name')['kernel-time-mean'].mean()
+index1 = data_gpu1['bench-name']
+index2 = data_gpu1['bench-name']
+time1 = data_gpu1['kernel-time-mean']
+time2 = data_gpu2['kernel-time-mean']
 
-plt.figure(figsize=(10, 6))  # Imposta la dimensione del grafico
-bar_width = 0.1  # Larghezza delle barre
+ind = list(range(len(index1)))
 
-colors = ['cyan' if 'SIMD' in index else 'green' for index in df_grouped.index]
-bars = plt.barh(df_grouped.index, df_grouped.values, color=colors)
-# bars = plt.barh(range(len(df_grouped.index)), df_grouped.values, color=colors)
+# Larghezza delle barre
+width = 0.35
 
-plt.ylabel('Type')
-plt.xlabel('Execution Time (us)')
+# Crea il grafico a barre
+fig, ax = plt.subplots(figsize=(10, 6))
+bar1 = ax.barh(ind, time1, height=width, color='b', label='A770')
+bar2 = ax.barh([i + width for i in ind], time2, height=width, color='g', label='V100')
 
-# plt.yticks([])
-# for i, bar in enumerate(bars):
-#     plt.text(bar.get_width(), bar.get_y() + bar.get_height() / 2, df_grouped.index[i], ha='right', va='center')
+# Aggiungi etichette, titolo e legenda
+ax.set_xlabel('us')
+ax.set_title('Execution Time')
+ax.set_yticks(ind)
+ax.set_yticklabels(data_gpu1['bench-name'])
+ax.legend()
 
-plt.title('Vector Addition: Arc A770')
+min_value = min(min(time1), min(time2))
+max_value = max(max(time1), max(time2))
+ax.set_xlim(min_value - 0.1, max_value + 0.1)
 
-if not out_plot is None:
-    plt.savefig(out_plot)
-else:
-    plt.show()
+# Mostra il grafico
+plt.tight_layout()
+plt.savefig(out_file)
