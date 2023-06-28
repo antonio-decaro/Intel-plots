@@ -1,5 +1,9 @@
+from matplotlib.patches import Patch
 from plot_utils import check_double_input
 import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
+import pandas as pd
+import numpy as np
 from scipy.stats import hmean
 
 data_gpu1, data_gpu2, out_file = check_double_input()
@@ -25,31 +29,46 @@ data_gpu2 = data_gpu2.replace(to_replace).groupby('bench-name')['kernel-time-mea
 data_gpu1['kernel-time-mean'] *= 1000
 data_gpu2['kernel-time-mean'] *= 1000
 
-index1 = data_gpu1['bench-name']
-index2 = data_gpu1['bench-name']
-time1 = data_gpu1['kernel-time-mean']
-time2 = data_gpu2['kernel-time-mean']
+df = pd.DataFrame()
+df['type'] = data_gpu1['bench-name'].apply(lambda x: x.split()[0])
+df['sg'] = data_gpu1['bench-name'].apply(lambda x: x.split()[1])
+df['A770'] = data_gpu1['kernel-time-mean']
 
-ind = list(range(len(index1)))
+v100_values = data_gpu2['kernel-time-mean'].values
+v100_mapping = dict(zip(data_gpu2['bench-name'].apply(lambda x: x.split()[0]), v100_values))
+df['V100'] = df['type'].map(v100_mapping)
 
-# Larghezza delle barre
-width = 0.35
+types = df['type'].unique()
+bar_width = 1
 
-# Crea il grafico a barre
 fig, ax = plt.subplots(figsize=(10, 6))
-bar1 = ax.barh(ind, time1, height=width, color='b', label='A770')
-bar2 = ax.barh([i + width for i in ind], time2, height=width, color='g', label='V100')
 
-# Aggiungi etichette, titolo e legenda
-ax.set_xlabel('Milliseconds (ms)')
-ax.set_title('Vector Addition: ARC A770 vs. Tesla V100')
-ax.set_yticks(ind)
-ax.set_yticklabels(data_gpu1['bench-name'])
-ax.legend()
+group_width = bar_width * len(types)
+num_bars = len(types)
 
-min_value = min(min(time1), min(time2))
-max_value = max(max(time1), max(time2))
-ax.set_xlim(min_value - 0.1, max_value + 0.1)
+colors = ['lightsteelblue', 'cornflowerblue', 'royalblue', 'forestgreen']
+
+rects = []
+for i, t in enumerate(types):
+    a770_vals = df.loc[df['type'] == t, 'A770'].values
+    a770_sg_vals = df.loc[df['type'] == t, 'sg'].values
+    a770_vals[0], a770_vals[1], a770_vals[2] = a770_vals[2], a770_vals[0], a770_vals[1]
+
+    v100_val = df.loc[df['type'] == t, 'V100'].values[0] # all the same]
+    vals = np.append(a770_vals, v100_val)
+    
+    offset = i * (len(vals) + 1)
+    rect = ax.bar(np.arange(len(vals)) + offset, vals, bar_width, color=colors)
+    rects.append(rect)
+
+
+tick_positions = np.arange(num_bars) * (len(vals) + 1) + (num_bars - 1) * bar_width / 2
+ax.set_xticks(tick_positions)
+ax.set_xticklabels(types)
+
+legend_patches = [Patch(color=color) for color in colors]
+ax.legend(legend_patches, ['A770 - sg8', 'A770 - sg16', 'A770 - sg32', 'V100'])
+
 
 # Mostra il grafico
 plt.tight_layout()
