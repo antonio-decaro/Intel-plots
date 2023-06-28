@@ -68,7 +68,9 @@ ax.set_xticklabels(types)
 
 legend_patches = [Patch(color=color) for color in colors]
 ax.legend(legend_patches, ['A770 - sg8', 'A770 - sg16', 'A770 - sg32', 'V100'])
-
+ax.set_xlabel('Data Types')
+ax.set_ylabel('Milliseconds (ms)')
+ax.set_title('Vector Addition: A770 vs. V100')
 
 # Mostra il grafico
 plt.tight_layout()
