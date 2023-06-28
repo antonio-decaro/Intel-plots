@@ -3,27 +3,32 @@ import os
 import glob
 import pandas as pd
 from typing import List
+from io import StringIO
 
-if len(sys.argv) != 3:
-    print(f"Usage: {sys.argv[0]} <logs_dir> <output_dir>")
+if len(sys.argv) < 2:
+    print(f"Usage: {sys.argv[0]} <logs_dir> [output_dir]")
     exit(1)
 
 logs_dir = os.path.abspath(sys.argv[1])
-output_dir = os.path.abspath(sys.argv[2])
+output_dir = None
+
+if len(sys.argv) >= 3:
+    output_dir = os.path.abspath(sys.argv[2])
+
 
 if not os.path.isdir(logs_dir):
     print("Error: <logs_dir> must be a directory")
     exit(1)
 
-if (os.path.isfile(output_dir)):
+if (output_dir is not None) and (os.path.isfile(output_dir)):
     print("Error: <output_dir> must be a directory")
     exit(1)
 
-if (not os.path.exists(output_dir)):
+if (output_dir is not None) and (not os.path.exists(output_dir)):
     os.makedirs(output_dir)
 
 COLUMNS = ['bench-name', 'core-freq', 'memory-freq', 'problem-size', 'local-size', 'num-iters', 'throughput-metric',
-           'kernel-time-mean', 'kernel-time-stddev', 'kerne-time-min', 'kernel-time-throughput',
+           'kernel-time-mean', 'kernel-time-stddev', 'kernel-time-min', 'kernel-time-throughput',
            'run-time-mean', 'run-time-stddev', 'run-time-min', 'run-time-throughput',
            'kernel-energy-mean', 'kernel-energy-stddev', 'kernel-energy-max', 'kernel-energy-min'
 ]
@@ -58,6 +63,12 @@ for fname in glob.glob(f"{logs_dir}/*.log"):
                     for key in new_row:
                         new_row[key] = ""
 
-output_file = output_dir + "/" + logs_dir[logs_dir.rindex('/') + 1:] + ".csv"
-with open(output_file, 'w') as f:
-    df.to_csv(output_file, index=False)
+if output_dir is None:
+    output = StringIO()
+    df.to_csv(output, index=False)
+    output.seek(0)
+    print(output.read())
+else:
+    output_file = output_dir + "/" + logs_dir[logs_dir.rindex('/') + 1:] + ".csv"
+    with open(output_file, 'w') as f:
+        df.to_csv(output_file, index=False)
