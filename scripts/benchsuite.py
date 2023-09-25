@@ -37,44 +37,7 @@ class BenchArgs:
         return " ".join(self.parse())
     
 benchmarks = {
-    "VectorAddition": [
-        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**0, num_runs=100),
-        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**1, num_runs=100),
-        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**2, num_runs=100),
-        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**3, num_runs=100),
-        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**4, num_runs=100),
-        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**5, num_runs=100),
-        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**6, num_runs=100),
-        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**7, num_runs=100),
-        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**8, num_runs=100),
-        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**9, num_runs=100),
-        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**10, num_runs=100),
-        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**11, num_runs=100),
-        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**12, num_runs=100),
-        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**13, num_runs=100),
-        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**14, num_runs=100),
-        BenchArgs("vec_add", 1, size=2097152, local_size=1024, num_iters=2**15, num_runs=100),
-    ], 
-
-    # "LocalMemory" : [
-    #     BenchArgs("local_mem", 5, size=1024 * (2**1)),
-    #     BenchArgs("local_mem", 5, size=1024 * (2**2)),
-    #     BenchArgs("local_mem", 5, size=1024 * (2**3)),
-    #     BenchArgs("local_mem", 5, size=1024 * (2**4)),
-    #     BenchArgs("local_mem", 5, size=1024 * (2**5)),
-    #     BenchArgs("local_mem", 5, size=1024 * (2**6)),
-    #     BenchArgs("local_mem", 5, size=1024 * (2**7)),
-    #     BenchArgs("local_mem", 5, size=1024 * (2**8)),
-    #     BenchArgs("local_mem", 5, size=1024 * (2**9)),
-    #     BenchArgs("local_mem", 5, size=1024 * (2**10)),
-    #     BenchArgs("local_mem", 5, size=1024 * (2**11)),
-    #     BenchArgs("local_mem", 5, size=1024 * (2**12)),
-    #     BenchArgs("local_mem", 5, size=1024 * (2**13)),
-    #     BenchArgs("local_mem", 5, size=1024 * (2**14)),
-    # ],
-    # "HostDeviceBandwidth": [
-    #     BenchArgs("host_device_bandwidth", 1, size=512, local_size=32, num_runs=10)
-    # ]
+    "RegisterPressure": BenchArgs("reg_pressure", 1, size=2097152, local_size=1024, num_runs=1000),
 }
 
 
