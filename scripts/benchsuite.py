@@ -2,7 +2,9 @@ import sys
 import typing
 import os
 import subprocess
+import argparse
 import glob
+import yaml
 from typing import List
 from tqdm import tqdm
 
@@ -36,6 +38,7 @@ class BenchArgs:
     def __str__(self) -> str:
         return " ".join(self.parse())
     
+
 benchmarks = {
     "RegisterPressure": BenchArgs("reg_pressure", 1, size=2097152, local_size=1024, num_runs=1000),
 }
@@ -63,20 +66,35 @@ def get_bench_instance(bench_list: List[BenchArgs], iter: int) -> BenchArgs:
 
 def main():
 
-    if (len(sys.argv) < 3):
-        print(f"Usage: {sys.argv[0]} /path/to/sycl/bench /path/to/out/dir [append (default) | replace]")
-        exit(1)
+    parser = argparse.ArgumentParser(prog='benchsuite', description='Run sycl-bench program and save the logs')
+    parser.add_argument('execs', type=str, help='The path of the sycl-bench executables')
+    parser.add_argument('out', type=str, help='The path of the output directory')
+    parser.add_argument('-s', '--settings', type=str, default='./settings.yaml', help='The path of the settings.yaml file')
+    parser.add_argument('-r', '--replace', action='store_true', default=False, help='Choose if to replace logs when running new benchsuite')
+    args = parser.parse_args()
     
-    append = True
-    if (len(sys.argv) >= 4):
-        if sys.argv[3] == 'replace':
-            append = False
-    bench_dir = os.path.abspath(sys.argv[1])
-    out_dir = os.path.abspath(sys.argv[2]) 
+    append = not args.replace
+    bench_dir = os.path.abspath(args.execs)
+    out_dir = os.path.abspath(args.out)
+    yaml_file = os.path.abspath(args.settings)
 
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
     os.chdir(bench_dir)
+
+    benchmarks = {}
+    with open(yaml_file, 'r') as f:
+        data = yaml.safe_load(f)
+
+    for key, val in data.items():
+        print(key)
+        print(val)
+        benchmarks[key] = []
+        for v in val:
+            benchmarks[key].append(BenchArgs(**v))
+
+    for key, val in benchmarks.items():
+        print(val[0])
 
     for bench in benchmarks:
         curr_bench_path = os.path.join(out_dir, bench)

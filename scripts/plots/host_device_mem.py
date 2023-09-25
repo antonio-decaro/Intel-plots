@@ -40,12 +40,12 @@ width = 0.35
 
 # Crea il grafico a barre
 fig, ax = plt.subplots(figsize=(10, 6))
-bar1 = ax.bar(ind, bandwidth1, width, color='b', label='A770')
+bar1 = ax.bar(ind, bandwidth1, width, color='b', label='MAX 1100')
 bar2 = ax.bar([i + width for i in ind], bandwidth2, width, color='g', label='V100')
 
 # Aggiungi etichette, titolo e legenda
 ax.set_ylabel('GB/s')
-ax.set_title('Host-Device Bandwidth')
+ax.set_title('Host-Device Bandwidth (Log Scale)')  # Update the title
 ax.set_xticks(ind)
 ax.set_xticklabels(data_gpu1['bench-name'], rotation=90)
 ax.legend()
@@ -53,6 +53,9 @@ ax.legend()
 min_value = min(min(bandwidth1), min(bandwidth2))
 max_value = max(max(bandwidth1), max(bandwidth2))
 ax.set_ylim(min_value - 0.1, max_value + 0.1)
+
+# Set the y-axis to log scale
+ax.set_yscale('log')
 
 # Mostra il grafico
 plt.tight_layout()

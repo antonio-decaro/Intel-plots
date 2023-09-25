@@ -14,14 +14,14 @@ data_gpu1 = data_gpu1[data_gpu1["bench-name"] == 'MicroBench_LocalMem_fp32_4096'
 mean_gpu2 = data_gpu2.groupby("problem-size")["run-time-throughput"].apply(lambda x: hmean(x))
 data_gpu2 = data_gpu2[data_gpu2["bench-name"] == 'MicroBench_LocalMem_fp32_4096']
 
-plt.plot(mean_gpu1.index, mean_gpu1.values, label="ARC A770")
+plt.plot(mean_gpu1.index, mean_gpu1.values, label="MAX 1100")
 plt.plot(mean_gpu2.index, mean_gpu2.values, label="V100")
 
 # Aggiungi etichette e titolo al grafico
 plt.xlabel("Problem Size")
 plt.xscale('log')
 plt.ylabel("GiB/s")
-plt.title("ARC A770 vs. V100 Local Memory Bandwidth")
+plt.title("MAX 1100 vs. V100 Local Memory Bandwidth")
 
 # Aggiungi una legenda
 plt.legend()

@@ -1,0 +1,13 @@
+bench-name,core-freq,memory-freq,problem-size,local-size,num-iters,throughput-metric,kernel-time-mean,kernel-time-stddev,kernel-time-min,kernel-time-throughput,run-time-mean,run-time-stddev,run-time-min,run-time-throughput,kernel-energy-mean,kernel-energy-stddev,kernel-energy-max,kernel-energy-min
+MicroBench_HostDeviceBandwidth_1D_H2D_Contiguous,,,512,32,,0.125000,N/A,N/A,N/A,N/A,0.034733,0.109470,0.000102,1225.574304,,,,
+MicroBench_HostDeviceBandwidth_2D_H2D_Contiguous,,,512,32,,0.125000,N/A,N/A,N/A,N/A,0.000302,0.000338,0.000126,988.392321,,,,
+MicroBench_HostDeviceBandwidth_3D_H2D_Contiguous,,,512,32,,0.125000,N/A,N/A,N/A,N/A,0.000410,0.000618,0.000185,674.589040,,,,
+MicroBench_HostDeviceBandwidth_1D_D2H_Contiguous,,,512,32,,0.125000,N/A,N/A,N/A,N/A,0.000642,0.000512,0.000134,935.012866,,,,
+MicroBench_HostDeviceBandwidth_2D_D2H_Contiguous,,,512,32,,0.125000,N/A,N/A,N/A,N/A,0.000183,0.000093,0.000095,1310.643474,,,,
+MicroBench_HostDeviceBandwidth_3D_D2H_Contiguous,,,512,32,,0.125000,N/A,N/A,N/A,N/A,0.000168,0.000039,0.000102,1226.789149,,,,
+MicroBench_HostDeviceBandwidth_1D_H2D_Strided,,,512,32,,0.125000,N/A,N/A,N/A,N/A,0.100956,0.032963,0.069534,1.797676,,,,
+MicroBench_HostDeviceBandwidth_2D_H2D_Strided,,,512,32,,0.125000,N/A,N/A,N/A,N/A,0.053627,0.000169,0.053325,2.344115,,,,
+MicroBench_HostDeviceBandwidth_3D_H2D_Strided,,,512,32,,0.125000,N/A,N/A,N/A,N/A,0.054970,0.000259,0.054685,2.285831,,,,
+MicroBench_HostDeviceBandwidth_1D_D2H_Strided,,,512,32,,0.125000,N/A,N/A,N/A,N/A,0.017145,0.002123,0.014457,8.646085,,,,
+MicroBench_HostDeviceBandwidth_2D_D2H_Strided,,,512,32,,0.125000,N/A,N/A,N/A,N/A,0.028439,0.004083,0.023648,5.285891,,,,
+MicroBench_HostDeviceBandwidth_3D_D2H_Strided,,,512,32,,0.125000,N/A,N/A,N/A,N/A,0.030328,0.005227,0.023788,5.254734,,,,

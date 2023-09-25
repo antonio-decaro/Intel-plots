@@ -1,0 +1,30 @@
+# NameOfTheBenchmark:
+#   - name: 'name of the exec' [Mandatory]
+#     num_exec: 1 (number of execution) [Mandatory]
+#     size: 512 (global size)
+#     local_size: 32 (local size)
+#     num_iters: 1 (number of iterations)
+#     device: gpu (or cpu)
+### You can add more than one instance by adding a new -name and description in the same benchmark
+### Then it is possible to add more benchmarks
+
+RegisterPressure:
+  - name: 'reg_pressure' # mandatory
+    num_exec: 1 # mandatory
+    size: 512
+    local_size: 32
+    num_iters: 1
+    device: 'gpu'
+  - name: 'reg_pressure' # mandatory
+    num_exec: 1 # mandatory
+    size: 512
+    local_size: 32
+    num_iters: 1
+    device: 'gpu'
+LocalMemory:
+  - name: 'local_mem'
+    num_exec: 1
+    size: 512
+    local_size: 32
+    num_iters: 1
+    device: 'gpu'
