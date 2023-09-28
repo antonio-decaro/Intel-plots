@@ -37,12 +37,6 @@ class BenchArgs:
 
     def __str__(self) -> str:
         return " ".join(self.parse())
-    
-
-benchmarks = {
-    "RegisterPressure": BenchArgs("reg_pressure", 1, size=2097152, local_size=1024, num_runs=1000),
-}
-
 
 def get_last_log(dir) -> int:
     files = glob.glob(f"{dir}/*.log")
