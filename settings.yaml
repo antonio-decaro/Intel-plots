@@ -9,13 +9,10 @@
 ### You can add more than one instance by adding a new -name and description in the same benchmark
 ### Then it is possible to add more benchmarks
 
-LocalMemory:
-  - name: 'local_mem'
+HostDeviceBandwidth:
+  - name: 'host_device_bandwidth'
     num_exec: 1
     size: 512
     local_size: 32
-    num_iters: 1
     device: 'gpu'
-  - name: 'local_mem'
-    num_exec: 1
-    device: 'gpu'
+    num_runs: 20

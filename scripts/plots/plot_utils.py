@@ -38,3 +38,11 @@ def check_double_input():
     df1 = pd.read_csv(csv_file1)
     df2 = pd.read_csv(csv_file2)
     return (df1, df2, out_plot)
+
+def get_double_gpu_name():
+    assert len(sys.argv) >= 2
+
+    name1 = os.path.abspath(sys.argv[1]).split('/')[-2]
+    name2 = os.path.abspath(sys.argv[2]).split('/')[-2]
+
+    return (name1, name2)

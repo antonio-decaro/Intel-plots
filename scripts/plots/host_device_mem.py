@@ -1,4 +1,4 @@
-from plot_utils import check_double_input
+from plot_utils import check_double_input, get_double_gpu_name
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -8,6 +8,7 @@ from sklearn.preprocessing import MinMaxScaler
 from scipy.stats import hmean
 
 data_gpu1, data_gpu2, out_file = check_double_input()
+name1, name2 = get_double_gpu_name()
 
 to_replace = {
     'MicroBench_HostDeviceBandwidth_1D_H2D_Contiguous': '1D_H2D_C',
@@ -40,12 +41,12 @@ width = 0.35
 
 # Crea il grafico a barre
 fig, ax = plt.subplots(figsize=(10, 6))
-bar1 = ax.bar(ind, bandwidth1, width, color='b', label='MAX 1100')
-bar2 = ax.bar([i + width for i in ind], bandwidth2, width, color='g', label='V100')
+bar1 = ax.bar(ind, bandwidth1, width, color='b', label=name1)
+bar2 = ax.bar([i + width for i in ind], bandwidth2, width, color='g', label=name2)
 
 # Aggiungi etichette, titolo e legenda
 ax.set_ylabel('GB/s')
-ax.set_title('Host-Device Bandwidth (Log Scale)')  # Update the title
+ax.set_title('Host-Device Bandwidth')  # Update the title
 ax.set_xticks(ind)
 ax.set_xticklabels(data_gpu1['bench-name'], rotation=90)
 ax.legend()
@@ -55,7 +56,7 @@ max_value = max(max(bandwidth1), max(bandwidth2))
 ax.set_ylim(min_value - 0.1, max_value + 0.1)
 
 # Set the y-axis to log scale
-ax.set_yscale('log')
+# ax.set_yscale('log')
 
 # Mostra il grafico
 plt.tight_layout()

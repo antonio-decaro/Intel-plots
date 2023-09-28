@@ -88,7 +88,7 @@ def main():
             benchmarks[key].append(BenchArgs(**v))
 
     for key, val in benchmarks.items():
-        print(val[0])
+        print(*val)
 
     for bench in benchmarks:
         curr_bench_path = os.path.join(out_dir, bench)
