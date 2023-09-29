@@ -6,6 +6,12 @@
 #     num_iters: 1 (number of iterations)
 #     num_runs: 5 (number of runs in the instance)
 #     device: gpu (or cpu)
+### both 'local_size' and 'size' can also get range value in the following form:
+###       local_size: range(1024, 2, 14)
+### which means that it will be create a test case with a local_size equals to:
+###       1024 * (2 ^ 2...13)
+### also both 'local_size' and 'size' can select elements from a list:
+###       local_size: [128, 256, 512]
 ### You can add more than one instance by adding a new -name and description in the same benchmark
 ### Then it is possible to add more benchmarks
 
@@ -16,3 +22,10 @@ HostDeviceBandwidth:
     local_size: 32
     device: 'gpu'
     num_runs: 20
+LocalMemory:
+  - name: 'local_mem'
+    num_exec: 5
+    size: range(1024, 2, 15)
+    local_size: [128, 256, 512]
+    device: 'gpu'
+  

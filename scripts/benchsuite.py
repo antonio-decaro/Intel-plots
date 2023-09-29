@@ -58,6 +58,55 @@ def get_bench_instance(bench_list: List[BenchArgs], iter: int) -> BenchArgs:
             execs = bench_list[curr].num_exec
     return bench_list[curr]
 
+def get_range_values(obj, key: str):
+    ret = []
+    r: str = obj[key]
+    r = r.replace('range(', '').replace(')', '').replace(' ', '')
+    value, start, end = map(int, r.split(','))
+
+    for i in range(start, end):
+        ret.append(value * (2 ** i))
+    return ret
+
+def get_list_values(obj, key: str):
+    ret = []
+    values = obj[key]
+    for val in values:
+        ret.append(val)
+    return ret
+
+def get_test_sizes(obj, key: str):
+    if type(obj[key]) == str and 'range' in obj[key]:
+        return get_range_values(obj, key)
+    if type(obj[key]) == list:
+        return get_list_values(obj, key)
+    else:
+        raise f'Invalid option in field {key}'
+
+
+def build_test(benchmarks: list, val):
+    sizes = [3072]
+    local_sizes = [256]
+    if 'size' in val:
+        if type(val['size']) != int:
+            sizes = get_test_sizes(val, 'size')
+        else:
+            sizes = [val['size']]
+
+    if 'local_size' in val:
+        if type(val['local_size']) != int:
+            local_sizes = get_test_sizes(val, 'local_size')
+        else:
+            local_sizes = [val['local_size']]
+
+    for size in sizes:
+        val['size'] = size
+        for local_size in local_sizes:
+            val['local_size'] = local_size
+            test = BenchArgs(**val)
+            benchmarks.append(test)
+
+
 def main():
 
     parser = argparse.ArgumentParser(prog='benchsuite', description='Run sycl-bench program and save the logs')
@@ -80,15 +129,12 @@ def main():
     with open(yaml_file, 'r') as f:
         data = yaml.safe_load(f)
 
+    print('Benchmark configurations: ')
     for key, val in data.items():
-        print(key)
-        print(val)
+        print(f'\t- {key}: {val}')
         benchmarks[key] = []
         for v in val:
-            benchmarks[key].append(BenchArgs(**v))
-
-    for key, val in benchmarks.items():
-        print(*val)
+            build_test(benchmarks[key], v)
 
     for bench in benchmarks:
         curr_bench_path = os.path.join(out_dir, bench)
